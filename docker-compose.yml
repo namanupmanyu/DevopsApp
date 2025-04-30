@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    image: nupmanyu/devops-app:latest
+    ports:
+      - "4000:4000"
+    restart: always
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1  
+        delay: 10s  
+      rollback_config:
+        parallelism: 1  
+        delay: 10s 
+
+networks:
+  app-network:
+    driver: bridge
