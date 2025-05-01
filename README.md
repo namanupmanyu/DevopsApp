@@ -28,17 +28,18 @@ DevopsApp/ │ ├── Dockerfile ├── docker-compose.yml ├── Jenki
 
 Make sure you have the following installed:
 
-```sh
+
 sudo apt update
 sudo apt install -y terraform ansible
 
 
-2. ☁️ Launch EC2 Instance Using Terraform
+### 2. ☁️ Launch EC2 Instance Using Terraform
+
 terraform init
 terraform apply
 After execution, note down the EC2 instance's public IP address.
 
-3. ⚙️ Configure Ansible to Provision the EC2 Instance
+### 3. ⚙️ Configure Ansible to Provision the EC2 Instance
 
 3.1 Edit hosts.ini with EC2 IP:
 [ec2]
@@ -49,7 +50,7 @@ After execution, note down the EC2 instance's public IP address.
 ansible-playbook -i hosts.ini playbook.yml
 This will install Docker, Docker Compose, Jenkins on the EC2 instance.
 
-4. 🔧 Setup Jenkins (on the EC2 instance)
+### 4. 🔧 Setup Jenkins (on the EC2 instance)
 Visit: http://<YOUR_EC2_PUBLIC_IP>:8080
 
 Complete initial Jenkins setup:
@@ -60,7 +61,7 @@ Add admin user
 
 Add Docker Hub credentials in Jenkins (with ID dockerhub-credentials)
 
-5. 🔁 Create Jenkins Pipeline
+### 5. 🔁 Create Jenkins Pipeline
 
 Create a Pipeline project.
 
@@ -74,7 +75,7 @@ Repository URL: https://github.com/namanupmanyu/DevopsApp.git
 
 Branch: master (or your desired branch)
 
-6. 🧪 Run the Jenkins Job
+### 6. 🧪 Run the Jenkins Job
 
 Jenkins will:
 
@@ -86,7 +87,7 @@ Push image to Docker Hub
 
 Deploy container using docker-compose.yml
 
-7. 🔍 Verify Everything Is Working
+### 7. 🔍 Verify Everything Is Working
 
 7.1 Confirm Image Is on Docker Hub
 
