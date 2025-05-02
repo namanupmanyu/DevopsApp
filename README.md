@@ -15,27 +15,30 @@ This project demonstrates a complete CI/CD pipeline setup using **Terraform**, *
 - GitHub
 - AWS EC2
 - Docker Hub
+- Prometheus
 
 ---
 
 ## 📁 Project Structure
-DevopsApp/ │ ├── Dockerfile ├── docker-compose.yml ├── Jenkinsfile ├── playbook.yml ├── hosts.ini ├── main.tf ├── variables.tf ├── ansible
+DevopsApp/ │ ├── Dockerfile ├── docker-compose.yml ├── Jenkinsfile 
+├── playbook.yml ├── hosts.ini  ├── ansible ├── main.tf ├── variables.tf ├── terraform
 
 
 ## 🚀 Step-by-Step Setup Instructions
 
 ### 1. ✅ Install Dependencies on Local Machine
 
-Make sure you have the following installed:
-
+Make sure you have the following installed in your Local Machine(if using Linux):
 
 sudo apt update
-sudo apt install -y terraform ansible
+sudo apt install terraform -y
+sudo apt install ansible -y
 
 
 ### 2. ☁️ Launch EC2 Instance Using Terraform
 
 terraform init
+terraform plan
 terraform apply
 After execution, note down the EC2 instance's public IP address.
 
@@ -55,37 +58,37 @@ Visit: http://<YOUR_EC2_PUBLIC_IP>:8080
 
 Complete initial Jenkins setup:
 
-Install plugins
+4.1 Install plugins
 
-Add admin user
+4.2 Add admin user
 
-Add Docker Hub credentials in Jenkins (with ID dockerhub-credentials)
+4.3 Add Docker Hub credentials in Jenkins (with ID dockerhub-credentials)
 
 ### 5. 🔁 Create Jenkins Pipeline
 
-Create a Pipeline project.
+5.1 Create a Pipeline project.
 
-Under "Pipeline", choose:
+5.2 Under "Pipeline", choose:
 
-Definition: Pipeline script from SCM
+5.2.1 Definition: Pipeline script from SCM
 
-SCM: Git
+5.2.2 SCM: Git
 
-Repository URL: https://github.com/namanupmanyu/DevopsApp.git
+5.2.3 Repository URL: https://github.com/namanupmanyu/DevopsApp.git
 
-Branch: master (or your desired branch)
+5.2.4 Branch: master (or your desired branch)
 
 ### 6. 🧪 Run the Jenkins Job
 
 Jenkins will:
 
-Clone your repo
+6.1 Clone your repo
 
-Build Docker image using the Dockerfile
+6.2 Build Docker image using the Dockerfile
 
-Push image to Docker Hub
+6.3 Push image to Docker Hub
 
-Deploy container using docker-compose.yml
+6.4 Deploy container using docker-compose.yml
 
 ### 7. 🔍 Verify Everything Is Working
 
@@ -98,7 +101,6 @@ Visit: https://hub.docker.com/repository/docker/nupmanyu/devops-app
 ssh -i ~/.ssh/your-key.pem ubuntu@<EC2_PUBLIC_IP>
 
 Check container:
-
 docker ps
 
 7.3 Access Your Rails App
@@ -107,3 +109,14 @@ Open in the browser:
 
 http://<YOUR_EC2_PUBLIC_IP>:4000
 You should see the Ruby on Rails app running!
+
+7.4 Confirm Grafna container is Running
+
+Open in the browser:
+http://<YOUR_EC2_PUBLIC_IP>:3000
+
+7.5 Confirm Prometheus Container is Running 
+
+Open in the browser:
+http://<YOUR_EC2_PUBLIC_IP>:9090
+
