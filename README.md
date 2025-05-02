@@ -1,5 +1,5 @@
 
-# DevOps Project: CI/CD Pipeline with Terraform, Ansible, Jenkins, Docker, and Ruby on Rails
+# DevOps Project: CI/CD Pipeline with Terraform, Ansible, Jenkins, Docker, Prometheus, Grafana and Ruby on Rails
 
 This project demonstrates a complete CI/CD pipeline setup using **Terraform**, **Ansible**, **Jenkins**, **Docker**, **Grafana**, **Prometheus** and **Ruby on Rails**, with images pushed to **Docker Hub** and application deployed on an **AWS EC2 instance**.
 
