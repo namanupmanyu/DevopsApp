@@ -1,13 +1,61 @@
-<h1>Welcome to the DevOps Test Project Hi we will enhance this project🚀</h1>
+    }
+    ol {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .steps {
+      margin-top: 30px;
+      background-color: #eaf6ff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    code {
+      background-color: #dfe6e9;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the DevOps Test Project 🚀</h1>
 
-<p>This project demonstrates a complete CI/CD pipeline using the following tools:</p>
+  <p>This project demonstrates a complete CI/CD pipeline using the following tools:</p>
 
-<ol>
-  <li><strong>Terraform</strong> – To provision the EC2 instance on AWS</li>
-  <li><strong>Ansible</strong> – To install and configure Docker, Jenkins, and Docker Swarm</li>
-  <li><strong>Jenkins</strong> – To automate the build and deployment pipeline</li>
-  <li><strong>Grafana</strong> – To monitor application logs and performance</li>
-</ol>
+  <ol>
+    <li><strong>Terraform</strong> – To provision the EC2 instance on AWS</li>
+    <li><strong>Ansible</strong> – To install and configure Docker, Jenkins,and Docker-Compose</li>
+    <li><strong>Jenkins</strong> – To automate the build and deployment pipeline</li>
+    <li><strong>Docker-compose</strong> - To deploy our application</li>
+    <li><strong>Minikube</strong> – To locally simulate a Kubernetes cluster for testing and deployment</li>
+    <li><strong>Grafana</strong> – To monitor application logs and performance</li>
+  </ol>
 
-<p>You're viewing this content from: <code>app/views/home/index.html.erb</code></p>
+  <div class="steps">
+    <h2>📦 How this app is running:</h2>
+    <ul>
+      <li>✅ Terraform provisions an EC2 instance on AWS.</li>
+      <li>✅ Ansible installs Docker, Jenkins, and Docker-compose on the instance.</li>
+      <li>✅ Jenkins pulls code from GitHub and builds a Docker image.</li>
+      <li>✅ The image is pushed to Docker Hub and deployed via Docker-compose</li>
+      <li>✅ The app runs inside a container and is accessible via a web browser.</li>
+      <li>✅ Grafana monitors the container performance and logs.</li>
+      <li>✅ Minikube is used locally to simulate a Kubernetes cluster for testing and deployment.</li>
+    </ul>
+  </div>
+
+   <div class="note">
+    ⚠️ This project, when run locally on Ubuntu OS with Docker installed, supports Minikube. 
+  </div>
+
+  <p style="text-align:center;">You're viewing this content from: <code>app/views/home/index.html.erb</code></p>
+</body>
+</html>
+
+
 
