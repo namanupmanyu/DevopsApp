@@ -1,9 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps Test Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9fd;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
     }
     ol {
       background-color: #ffffff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     li {
       margin-bottom: 10px;
@@ -13,12 +29,23 @@
       background-color: #eaf6ff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     code {
       background-color: #dfe6e9;
       padding: 2px 6px;
       border-radius: 4px;
+    }
+    .note {
+      margin-top: 20px;
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-left: 6px solid #ffeeba;
+      border-radius: 8px;
+    }
+    p {
+      font-size: 16px;
     }
   </style>
 </head>
@@ -28,34 +55,35 @@
   <p>This project demonstrates a complete CI/CD pipeline using the following tools:</p>
 
   <ol>
-    <li><strong>Terraform</strong> – To provision the EC2 instance on AWS</li>
-    <li><strong>Ansible</strong> – To install and configure Docker, Jenkins,and Docker-Compose</li>
-    <li><strong>Jenkins</strong> – To automate the build and deployment pipeline</li>
-    <li><strong>Docker-compose</strong> - To deploy our application</li>
-    <li><strong>Minikube</strong> – To locally simulate a Kubernetes cluster for testing and deployment</li>
-    <li><strong>Grafana</strong> – To monitor application logs and performance</li>
+    <li><strong>Terraform</strong> – Provisions an EC2 instance on AWS</li>
+    <li><strong>Ansible</strong> – Installs and configures Docker, Jenkins, and Docker Compose</li>
+    <li><strong>Jenkins</strong> – Automates the build and deployment pipeline</li>
+    <li><strong>Docker Compose</strong> – Deploys the application as containers</li>
+    <li><strong>Minikube</strong> – Simulates a local Kubernetes cluster for testing and deployment</li>
+    <li><strong>Grafana</strong> – Monitors application logs and performance</li>
   </ol>
 
   <div class="steps">
     <h2>📦 How this app is running:</h2>
     <ul>
-      <li>✅ Terraform provisions an EC2 instance on AWS.</li>
-      <li>✅ Ansible installs Docker, Jenkins, and Docker-compose on the instance.</li>
-      <li>✅ Jenkins pulls code from GitHub and builds a Docker image.</li>
-      <li>✅ The image is pushed to Docker Hub and deployed via Docker-compose</li>
-      <li>✅ The app runs inside a container and is accessible via a web browser.</li>
-      <li>✅ Grafana monitors the container performance and logs.</li>
-      <li>✅ Minikube is used locally to simulate a Kubernetes cluster for testing and deployment.</li>
+      <li>✅ Terraform provisions an EC2 instance on AWS</li>
+      <li>✅ Ansible installs Docker, Jenkins, and Docker Compose</li>
+      <li>✅ Jenkins pulls code from GitHub and builds a Docker image</li>
+      <li>✅ The image is pushed to Docker Hub and deployed via Docker Compose</li>
+      <li>✅ The app runs inside a Docker container and is accessible via a web browser</li>
+      <li>✅ Grafana monitors container performance and logs</li>
+      <li>✅ Minikube is used locally to simulate a Kubernetes environment</li>
     </ul>
   </div>
 
-   <div class="note">
-    ⚠️ This project, when run locally on Ubuntu OS with Docker installed, supports Minikube. 
+  <div class="note">
+    ⚠️ This project supports local execution on Ubuntu OS with Docker and Minikube installed.
   </div>
 
-  <p style="text-align:center;">You're viewing this content from: <code>app/views/home/index.html.erb</code></p>
+  <p style="text-align: center;">You're viewing this content from: <code>app/views/home/index.html.erb</code></p>
 </body>
 </html>
+
 
 
 
